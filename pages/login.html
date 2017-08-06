@@ -1,0 +1,62 @@
+<div class="login" ng-controller="loginController">
+  <h1 class="wel">WELCOME TO "Wok N' Roll"</h1>
+<h2 class="visit">Please Login to visit our site...</h2>
+
+    <div class="login-form">
+        <h3 class="form"> Login Form</h3>
+        <form name="loginForm">
+<div class="form-group">
+    <label class="mail" for="user-email">Email address</label>
+    <input type="email" class="form-control" id="user-email" placeholder="Email" name="email" ng-model="user.email" required="">
+    <div ng-show="loginForm.email.$error.required">Required!</div>
+    <div ng-show="loginForm.email.$error.email">This doesn't look like a valid email</div>
+</div>
+<div class="form-group">
+<label class="mail" for="user-password">Password</label>
+<input type="password" class="form-control" id="user-password" placeholder="Password" name="password" required="" ng-model="user.password" ng-minlength="6" ng-maxlength="15">
+<div ng-show="loginForm.password.$error.minlength">
+Password must be at least 6 characters long
+</div>
+<div ng-show="loginForm.password.$error.maxlength">
+Password must be at most 15 characters long
+</div>
+<div ng-show="loginForm.password.$error.required">
+Please enter your super secret ninja password
+</div>
+</div>
+<button type="submit" class="btn btn-default" ng-disabled="loginForm.$invalid" ng-click="goToHome()">Login</button>
+</form>
+    </div>
+</div>
+
+<style media="screen">
+  .visit{
+    font-family: 'Shrikhand', cursive;
+    text-align: center;
+
+  }
+
+  .login{
+    background-image: url("http://www.kavach.mobi/images/Restaurants.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+  }
+
+  .wel{
+    font-family: 'Jacques Francois Shadow', cursive;
+    text-align: center;
+    font-size: 55px;
+  }
+
+  .form{
+    font-family: 'Trade Winds', cursive;
+    font-size: 25px;
+  }
+
+  .mail{
+    font-family: 'Julee', cursive;
+    font-size: 25px;
+  }
+</style>
